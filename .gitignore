@@ -1,4 +1,5 @@
 npm-debug.log
+node_modules/*
 
 # Created by https://www.gitignore.io/api/webstorm,apachecordova
 
