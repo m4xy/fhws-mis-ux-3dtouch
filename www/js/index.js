@@ -28,7 +28,10 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         document.addEventListener('deviceready', function () {
-            
+            $('#submit_btn').on('click touchstart', function(){
+                window.location.href = "poll.html";
+            });
+
         }, false);
     }
 };
