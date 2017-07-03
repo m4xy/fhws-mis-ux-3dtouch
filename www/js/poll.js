@@ -32,20 +32,29 @@ var app = {
 
         document.addEventListener('deviceready', function ()
         {
-            // on cordova start, asks plugin continuosly for ForceTouchData
-            setInterval(getForceTouchData,15); // 15? => 1000ms/15 = ~60fps;
-            startProgressBar();
+            var circle = initProgressBar();
+
+            $(document).on('touchstart', function(){
+                window.refreshIntervalId = setInterval(getForceTouchData,15); // 15? => 1000ms/15 = ~60fps;
+                circle.animate(1, function(){
+                    clearInterval(window.refreshIntervalId);
+                    console.log("Animation finished!");
+                });
+            });
+            $(document).on('touchend', function(){
+                circle.stop();
+                circle.destroy();
+                circle = initProgressBar();
+            });
 
         }, false);
 
-        function startProgressBar() {
-            var circle = new ProgressBar.Circle('#progress', {
+        function initProgressBar() {
+            return new ProgressBar.Circle('#progress', {
                 color: '#FCB03C',
                 duration: 5000,
                 easing: 'linear'
             });
-
-            circle.animate(1);
         }
 
         // getForceTouchData Method
@@ -88,7 +97,7 @@ var app = {
                         document.getElementById('touchType').innerHTML = 'Force Touch';
 
                     // printing Touch Point position coordinates
-                    console.log("x: " + ForceTouchData.touches[0].position.x + " ; " + "y: " + ForceTouchData.touches[0].position.y);
+                    //console.log("x: " + ForceTouchData.touches[0].position.x + " ; " + "y: " + ForceTouchData.touches[0].position.y);
                 }
                 else
                 {
@@ -98,7 +107,7 @@ var app = {
                     document.getElementById('touchType').innerHTML = 'No Touch';
                 }
                 // printing ForceTouchData output for each Touch Point available on screen
-                console.log(JSON.stringify(ForceTouchData.touches));
+                //console.log(JSON.stringify(ForceTouchData.touches));
             });
         }
     },
