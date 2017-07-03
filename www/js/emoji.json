@@ -1,0 +1,21 @@
+{
+  "emojis": [
+    {
+      "min": 0,
+      "max": 25,
+      "name": "sleeping",
+      "hex": "1f634"
+    },
+    {
+      "min": 25,
+      "max": 75,
+      "name": "nerd",
+      "hex": "1f913"
+    },
+    { "min": 75,
+      "max": 100,
+      "name": "pouting",
+      "hex": "1f621"
+    }
+  ]
+}

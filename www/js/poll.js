@@ -27,21 +27,22 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        //this.receivedEvent('deviceready');
-
 
         document.addEventListener('deviceready', function ()
         {
-            var circle = initProgressBar();
+            $.getJSON( "js/emoji.json", function( emojis ) {
+                window.emojis = emojis;
+            });
 
+            var circle = initProgressBar();
             $(document).on('touchstart', function(){
                 window.refreshIntervalId = setInterval(getForceTouchData,15); // 15? => 1000ms/15 = ~60fps;
                 circle.animate(1, function(){
                     clearInterval(window.refreshIntervalId);
-                    console.log("Animation finished!");
                 });
             });
             $(document).on('touchend', function(){
+                clearInterval(window.refreshIntervalId);
                 circle.stop();
                 circle.destroy();
                 circle = initProgressBar();
@@ -55,6 +56,14 @@ var app = {
                 duration: 5000,
                 easing: 'linear'
             });
+        }
+
+        function updateEmoji(force) {
+            for(var i = 0;i<window.emojis.emojis.length;i++) {
+                if(force >= window.emojis.emojis[i]['min'] && force <= window.emojis.emojis[i]['max']) {
+                    $('#mood-emoji').html('&#x' + window.emojis.emojis[i]['hex'] + ';');
+                }
+            }
         }
 
         function getForceTouchData() {
@@ -83,6 +92,8 @@ var app = {
                     document.getElementById('timestamp').innerHTML = '0.000000';
                     document.getElementById('force').innerHTML = '0.000000';
                 }
+
+                updateEmoji(ForceTouchData.touches[0].force * 100);
             });
         }
     }
