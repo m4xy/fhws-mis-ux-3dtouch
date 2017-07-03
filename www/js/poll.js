@@ -34,7 +34,19 @@ var app = {
         {
             // on cordova start, asks plugin continuosly for ForceTouchData
             setInterval(getForceTouchData,15); // 15? => 1000ms/15 = ~60fps;
+            startProgressBar();
+
         }, false);
+
+        function startProgressBar() {
+            var circle = new ProgressBar.Circle('#progress', {
+                color: '#FCB03C',
+                duration: 5000,
+                easing: 'linear'
+            });
+
+            circle.animate(1);
+        }
 
         // getForceTouchData Method
         function getForceTouchData()
