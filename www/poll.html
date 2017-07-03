@@ -35,7 +35,19 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>Hello World</title>
     <style type="text/css">
+        .progress-container {
+            position: relative;
+            height: 300px;
+        }
+        .mood {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 143px;
+            margin: auto;
+        }
         .progress {
+            position: absolute;
             height: 300px;
         }
         .progress > svg {
@@ -48,19 +60,19 @@
 <div class="app">
     <h1>moodbag</h1>
     <h4>FHWS - MIS - UX</h4>
-    <div id="deviceready" class="blink">
-        <p class="event listening">Connecting to Device</p>
-        <p class="event received">Device is Ready</p>
-    </div>
-    <br>
 
-    <div class="progress" id="progress"></div>
+    <div class="progress-container">
+        <div class="progress" id="progress"></div>
+        <div class="mood" id="mood">
+            Test
+        </div>
+    </div>
+
 
     <div id="forcetouch">
         <h5>Force Touch Status: <span id="forceTouchCapability">-</span></h5>
         <h5>Timestamp: <span id="timestamp">-</span></h5>
         <h5>Force: <span id="force">-</span></h5>
-        <h5>Touch Type: <span id="touchType">-</span></h5>
     </div>
 </div>
 <script type="text/javascript" src="cordova.js"></script>

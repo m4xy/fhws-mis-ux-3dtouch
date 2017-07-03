@@ -27,7 +27,7 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        this.receivedEvent('deviceready');
+        //this.receivedEvent('deviceready');
 
 
         document.addEventListener('deviceready', function ()
@@ -57,15 +57,11 @@ var app = {
             });
         }
 
-        // getForceTouchData Method
-        function getForceTouchData()
-        {
+        function getForceTouchData() {
             ForceTouch.getForceTouchData(function (ForceTouchData)
             {
-                // checking if device allows ForceTouch interaction
                 var forceTouchCapability = '';
-                switch(ForceTouchData.forceTouchCapability)
-                {
+                switch(ForceTouchData.forceTouchCapability) {
                     case '0':
                         forceTouchCapability = 'Unknown';
                         break;
@@ -79,49 +75,16 @@ var app = {
 
                 document.getElementById('forceTouchCapability').innerHTML = forceTouchCapability;
 
-                if(ForceTouchData.touches[0])
-                {
-                    // setting output values for first Touch Point at index:0 -> "ForceTouchData.touches[0]"
+                if(ForceTouchData.touches[0]) {
                     document.getElementById('timestamp').innerHTML = ForceTouchData.touches[0].timestamp;
                     document.getElementById('force').innerHTML = ForceTouchData.touches[0].force;
-
-                    var force = parseFloat(ForceTouchData.touches[0].force);
-                    // checking if No Touch or StandardTouch or Force Touch
-                    if(ForceTouchData.touches[0].tapCount == 0 && force == 0.0)
-                        document.getElementById('touchType').innerHTML = 'No Touch';
-                    else
-                    if((ForceTouchData.touches[0].tapCount > 0 && force == 0.0) || (force > 0.0 && force < 0.08))
-                        document.getElementById('touchType').innerHTML = 'Standard Touch';
-                    else
-                    if(force > 0.08)
-                        document.getElementById('touchType').innerHTML = 'Force Touch';
-
-                    // printing Touch Point position coordinates
-                    //console.log("x: " + ForceTouchData.touches[0].position.x + " ; " + "y: " + ForceTouchData.touches[0].position.y);
                 }
-                else
-                {
-                    // no Touch Point available -> resetting output values
+                else {
                     document.getElementById('timestamp').innerHTML = '0.000000';
                     document.getElementById('force').innerHTML = '0.000000';
-                    document.getElementById('touchType').innerHTML = 'No Touch';
                 }
-                // printing ForceTouchData output for each Touch Point available on screen
-                //console.log(JSON.stringify(ForceTouchData.touches));
             });
         }
-    },
-
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
     }
 };
 
