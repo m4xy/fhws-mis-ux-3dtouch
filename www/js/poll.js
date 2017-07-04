@@ -55,12 +55,17 @@ var app = {
             $('#toggle-sensordata').on('touchstart', function(){
                 $('#forcetouch').toggle();
             });
+            $('#main-btn').on('touchstart', function(){
+                if($('#main-btn').html() == 'Submit') {
+                    window.location.href = "index.html";
+                }
+            });
 
         }, false);
 
         function initProgressBar() {
             return new ProgressBar.Circle('#progress', {
-                color: '#FCB03C',
+                color: '#488aff',
                 duration: 2000,
                 easing: 'linear'
             });
