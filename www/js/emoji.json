@@ -2,117 +2,39 @@
   "emojis": [
     {
       "min": 0,
-      "max": 8,
+      "max": 10,
       "name": "sleeping",
       "hex": "1f634"
     },
     {
-      "min": 8,
-      "max": 13,
-      "name": "persevering",
-      "hex": "1f623"
-    },
-    {
-      "min": 13,
-      "max": 17,
-      "name": "fearful",
-      "hex": "1f628"
-    },
-    {
-      "min": 17,
-      "max": 22,
-      "name": "worried",
-      "hex": "1f61f"
-    },
-    {
-      "min": 22,
+      "min": 10,
       "max": 27,
       "name": "unamused",
       "hex": "1f612"
     },
     {
       "min": 27,
-      "max": 34,
+      "max": 40,
       "name": "neutral",
       "hex": "1f610"
     },
     {
-      "min": 34,
-      "max": 39,
-      "name": "slightly smiling",
-      "hex": "1f642"
-    },
-    {
-      "min": 39,
-      "max": 44,
-      "name": "smiling",
-      "hex": "1f60a"
-    },
-    {
-      "min": 44,
-      "max": 55,
+      "min": 40,
+      "max": 60,
       "name": "nerdy",
       "hex": "1f913"
     },
     {
-      "min": 55,
-      "max": 59,
-      "name": "satisfied",
-      "hex": "1f606"
-    },
-    {
-      "min": 59,
-      "max": 64,
-      "name": "grinning",
-      "hex": "1f604"
-    },
-    {
-      "min": 64,
-      "max": 68,
-      "name": "smiling",
-      "hex": "1f60a"
-    },
-    {
-      "min": 68,
-      "max": 72,
-      "name": "slightly smiling",
-      "hex": "1f642"
-    },
-    {
-      "min": 72,
-      "max": 77,
-      "name": "neutral",
-      "hex": "1f610"
-    },
-    {
-      "min": 77,
-      "max": 82,
+      "min": 60,
+      "max": 80,
       "name": "open mouth",
       "hex": "1f62e"
     },
     {
-      "min": 82,
-      "max": 86,
-      "name": "flushed",
-      "hex": "1f633"
-    },
-    {
-      "min": 86,
-      "max": 91,
-      "name": "dizzy",
-      "hex": "1f635"
-    },
-    {
-      "min": 91,
-      "max": 95,
-      "name": "triumph",
-      "hex": "1f624"
-    },
-    {
-      "min": 95,
+      "min": 80,
       "max": 99,
-      "name": "angry",
-      "hex": "1f620"
+      "name": "persevering",
+      "hex": "1f623"
     },
     { "min": 99,
       "max": 100,
