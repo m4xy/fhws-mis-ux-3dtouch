@@ -16,12 +16,63 @@
             background-position:left bottom;
             color: white;
         }
+        #carousel .cloud9-item, #buttons button {
+            cursor: pointer;
+        }
+        #carousel {
+            height: 200px;
+            width: 500px;
+        }
     </style>
 </head>
 <body>
+
+<div class="carousel-container">
+    <div id="carousel">
+        <p class="cloud9-item">&#x1f621;</p>
+        <p class="cloud9-item">&#x1f623;</p>
+        <p class="cloud9-item">&#x1f62e;</p>
+        <p class="cloud9-item">&#x1f913;</p>
+        <p class="cloud9-item">&#x1f610;</p>
+        <p class="cloud9-item">&#x1f612;</p>
+        <p class="cloud9-item">&#x1f634;</p>
+
+
+
+
+
+
+        <p class="cloud9-item"></p>
+        <p class="cloud9-item"></p>
+        <p class="cloud9-item"></p>
+        <p class="cloud9-item"></p>
+        <p class="cloud9-item"></p>
+        <p class="cloud9-item"></p>
+        <p class="cloud9-item"></p>
+        <p class="cloud9-item"></p>
+        <p class="cloud9-item"></p>
+        <p class="cloud9-item"></p>
+        <p class="cloud9-item"></p>
+        <p class="cloud9-item"></p>
+        <p class="cloud9-item"></p>
+        <p class="cloud9-item"></p>
+    </div>
+</div>
+
+
+<div id="buttons">
+    <button class="left">
+        ←
+    </button>
+    <button class="right">
+        →
+    </button>
+</div>
+
 <button id="main-btn" class="main-btn ion-btn-block">Press</button>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/cloud9carousel.js"></script>
 <script type="text/javascript">
     $('#main-btn').on('mousedown', function(){
         console.log("Mousedown");
@@ -30,6 +81,10 @@
     $('#main-btn').on('mouseup', function(){
         console.log("Mouseup");
         $('#main-btn').removeClass('calculate-mood');
+    });
+    $('#carousel').Cloud9Carousel({
+        buttonLeft: $("#buttons > .left"),
+        buttonRight: $("#buttons > .right")
     });
 </script>
 </body>
