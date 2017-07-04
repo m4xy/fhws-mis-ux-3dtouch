@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/ionic-btn.css"/>
+    <style type="text/css">
+        .main-btn {
+            background: linear-gradient(to right, rgb(72, 138, 255) 50%, #f4f4f4 50%);
+            color: black;
+            background-size: 200% 100%;
+            background-position:right bottom;
+            transition:all 2s linear;
+        }
+        .calculate-mood {
+            background-position:left bottom;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<button id="main-btn" class="main-btn ion-btn-block">Press</button>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#main-btn').on('mousedown', function(){
+        console.log("Mousedown");
+        $('#main-btn').addClass('calculate-mood');
+    });
+    $('#main-btn').on('mouseup', function(){
+        console.log("Mouseup");
+        $('#main-btn').removeClass('calculate-mood');
+    });
+</script>
+</body>
+</html>

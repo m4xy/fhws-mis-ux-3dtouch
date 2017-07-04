@@ -37,11 +37,16 @@ var app = {
             var circle = initProgressBar();
             $(document).on('touchstart', function(){
                 window.refreshIntervalId = setInterval(getForceTouchData,15); // 15? => 1000ms/15 = ~60fps;
+                $('#main-btn').html('Press');
+                $('#main-btn').addClass('calculate-mood');
                 circle.animate(1, function(){
                     clearInterval(window.refreshIntervalId);
+                    $('#main-btn').html('Submit');
                 });
             });
             $(document).on('touchend', function(){
+                if($('#main-btn').html() != 'Submit')
+                    $('#main-btn').removeClass('calculate-mood');
                 clearInterval(window.refreshIntervalId);
                 circle.stop();
                 circle.destroy();
@@ -56,7 +61,7 @@ var app = {
         function initProgressBar() {
             return new ProgressBar.Circle('#progress', {
                 color: '#FCB03C',
-                duration: 5000,
+                duration: 2000,
                 easing: 'linear'
             });
         }
