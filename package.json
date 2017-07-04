@@ -1,0 +1,21 @@
+{
+    "name": "com.m4xy.forcetouch",
+    "version": "1.0.0",
+    "displayName": "Moodbag",
+    "cordova": {
+        "platforms": [
+            "ios"
+        ],
+        "plugins": {
+            "cordova-plugin-forcetouch": {},
+            "cordova-plugin-ios-longpress-fix": {},
+            "cordova-plugin-whitelist": {}
+        }
+    },
+    "dependencies": {
+        "cordova-ios": "~4.4.0",
+        "cordova-plugin-forcetouch": "../cordova-plugin-forcetouch",
+        "cordova-plugin-ios-longpress-fix": "~1.1.0",
+        "cordova-plugin-whitelist": "1"
+    }
+}

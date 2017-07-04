@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.m4xy.forcetouch" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>ForceTouchApp</name>
+    <name>Moodbag</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        3D Touch prototype for class room feedback.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="mail@maxarndt.com" href="https://www.maxarndt.com">
+        Max Arndt
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -23,7 +23,8 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <preference name="Suppress3DTouch" value="true" />
+    <engine name="ios" spec="~4.4.0" />
     <plugin name="cordova-plugin-forcetouch" spec="../cordova-plugin-forcetouch" />
-    <plugin name="cordova-plugin-whitelist" spec="1" />
     <plugin name="cordova-plugin-ios-longpress-fix" spec="~1.1.0" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
 </widget>
