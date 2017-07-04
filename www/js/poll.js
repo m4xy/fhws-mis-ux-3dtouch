@@ -47,6 +47,9 @@ var app = {
                 circle.destroy();
                 circle = initProgressBar();
             });
+            $('#toggle-sensordata').on('touchstart', function(){
+                $('#forcetouch').toggle();
+            });
 
         }, false);
 
