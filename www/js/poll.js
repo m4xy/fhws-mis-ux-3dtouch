@@ -66,7 +66,7 @@ var app = {
         function initProgressBar() {
             return new ProgressBar.Circle('#progress', {
                 color: '#488aff',
-                duration: 2000,
+                duration: 3000,
                 easing: 'linear'
             });
         }

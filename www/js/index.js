@@ -31,6 +31,10 @@ var app = {
             $('#submit_btn').on('click touchstart', function(){
                 window.location.href = "poll.html";
             });
+            $('#poll-code').on('touchstart', function() {
+                $('#poll-code').focus();
+                window.scrollTo(0,0);
+            })
 
         }, false);
     }
