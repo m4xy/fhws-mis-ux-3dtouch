@@ -106,6 +106,8 @@ var app = {
                     document.getElementById('force').innerHTML = '0.000000';
                 }
 
+                var shadow = 200 - (ForceTouchData.touches[0].force * 100);
+                document.getElementById("shadow-circle").style.boxShadow = "0px 00px " + shadow + "px 40px black";
                 updateEmoji(ForceTouchData.touches[0].force * 100);
             });
         }

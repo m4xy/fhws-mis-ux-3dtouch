@@ -85,6 +85,17 @@
         #forcetouch {
             display: none;
         }
+        .shadow-circle {
+            position: absolute;
+            left: 45%;
+            right: 45%;
+            top:40px;
+            z-index: -1;
+            box-shadow: 0px 0px 1000px 40px black;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            color: transparent;
+        }
     </style>
 </head>
 <body>
@@ -96,6 +107,7 @@
     <div class="progress-container">
         <div class="progress-circle" id="progress"></div>
         <div class="mood" id="mood">
+            <span class="shadow-circle" id="shadow-circle">x</span>
             <span class="emoji" id="mood-emoji"></span>
         </div>
     </div>
